@@ -4,6 +4,202 @@
   box-sizing: border-box;
   border: none;
   text-decoration: none;
+  list-style: none;
 }
 
+:root {
+  --gradient: linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%);
 
+  --bg-card: #2a2634;
+
+  --gap: 1.6rem;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #121214 url(/assets/Fundo.png) no-repeat center top / 100% auto
+    fixed;
+  /* background-size: 100% 100%; */
+  overflow: auto;
+}
+
+section h2 {
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 160%;
+
+  letter-spacing: -0.047rem;
+  color: #fff;
+}
+
+section h3 {
+  margin-block-end: 2.4rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 160%;
+
+  letter-spacing: -0.018rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+.wrapper {
+  width: max(58rem);
+  width: 90%;
+
+  margin-inline: auto;
+  display: flex;
+  flex: 1;
+}
+
+img {
+  width: fit-content;
+}
+
+/* PERFIL */
+
+.perfil img {
+  width: min(12rem);
+  height: min(12rem);
+  border-radius: 100%;
+}
+
+.perfil::before {
+  content: "";
+  width: 13rem;
+  height: 13rem;
+  background: var(--gradient);
+  background-size: 600%;
+  animation: changeColor 4.8s alternate-reverse infinite;
+  border-radius: 100%;
+
+  position: absolute;
+  z-index: -1;
+}
+
+.perfil {
+  margin-block: 3.2rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+section .wrapper {
+  margin-block-end: 2.4rem;
+  padding: 2.4rem 3.4rem 3.4rem 3.4rem;
+  background: var(--bg-card);
+  border-radius: 0.8rem;
+
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+section .wrapper::before {
+  content: "";
+  width: 100%;
+
+  height: max(3rem);
+  background: var(--gradient);
+  background-size: 600%;
+  animation: changeColor 4.8s alternate-reverse infinite;
+  position: absolute;
+  left: 0rem;
+  top: -0.45rem;
+  z-index: -1;
+  border-radius: 0.8rem;
+}
+
+section#games ul.img-games a,
+section#channels ul.img-streamers a,
+section#social ul.social-list a {
+  transition: opacity 0.4s;
+}
+
+section#games ul.img-games a:hover,
+section#channels ul.img-streamers a:hover,
+section#social ul.social-list a:hover {
+  opacity: 0.73;
+}
+
+section#games .wrapper ul.img-games {
+  display: flex;
+  gap: var(--gap);
+  flex-flow: wrap;
+  position: relative;
+}
+
+section#games img {
+  width: 9rem;
+  height: 12rem;
+  border-radius: 0.8rem;
+}
+
+section#channels img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+}
+
+section#social ul.social-list {
+  display: flex;
+  gap: var(--gap);
+
+  font-size: 3.5rem;
+}
+
+section#social ul.social-list li:nth-child(1) a {
+  color: #a970ff;
+}
+section#social ul.social-list li:nth-child(2) a {
+  color: #1a8cd8;
+}
+section#social ul.social-list li:nth-child(3) a {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+section#social ul.social-list li:nth-child(4) a {
+  color: #fc1919dd;
+}
+
+@-webkit-keyframes changeColor {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+
+@-moz-keyframes changeColor {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
