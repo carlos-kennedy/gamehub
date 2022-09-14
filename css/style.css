@@ -17,14 +17,23 @@
   font-size: 62.5%;
 }
 
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient) center/ 120%;
+  border-radius: 0.6rem;
+}
+
 body {
   font-family: "Inter", sans-serif;
   width: 100%;
   height: 100%;
   background: #121214 url(/assets/Fundo.png) no-repeat center top / 100% auto
     fixed;
-  /* background-size: 100% 100%; */
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 section h2 {
@@ -49,9 +58,10 @@ section h3 {
 
 .wrapper {
   width: max(58rem);
-  width: 90%;
+  width: 65%;
 
   margin-inline: auto;
+
   display: flex;
   flex: 1;
 }
@@ -127,10 +137,11 @@ section#social ul.social-list a:hover {
 }
 
 section#games .wrapper ul.img-games {
+  position: relative;
+
   display: flex;
   gap: var(--gap);
   flex-flow: wrap;
-  position: relative;
 }
 
 section#games img {
@@ -147,6 +158,7 @@ section#channels img {
 
 section#social ul.social-list {
   display: flex;
+  flex-flow: wrap;
   gap: var(--gap);
 
   font-size: 3.5rem;
